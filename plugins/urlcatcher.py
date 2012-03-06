@@ -21,6 +21,9 @@ class UrlCatcherPlugin(Plugin):
             return
 
         url = match.group(0)
+
+        url = url.replace('/#!', '');
+
         res = urlparse.urlsplit(url)
 
         # Don't try to get the title for ftp etc
